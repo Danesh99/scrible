@@ -208,6 +208,32 @@
   50% { border-color: transparent; }
 }
 
+   body {
+      margin: 0;
+      padding: 0;
+      min-height: 200vh; /* Just to show scrolling effect */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px; /* distance from bottom */
+      right: 20px;  /* distance from right */
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: transform 0.3s;
+    }
+
+    
+   
 }
 
 
@@ -267,12 +293,14 @@
 </head>
    <body class="antialiased text-gray-900 bg-white">
       <!-- Skip to main content link for accessibility -->
+      
       <a href="#main-content" 
          class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
          Skip to main content
       </a>
 <br>
       <!-- Content will be injected here by the build process -->
+       
       <mountpoint><div id="RolloutPageContent"> <nav class="flex justify-between items-center px-6 py-4 bg-blue-900 text-white fixed top-0 left-0 w-full z-50 shadow-lg">
   <div class="text-lg font-bold">Micro Computers</div>
   <div class="hidden md:flex space-x-6">
@@ -303,7 +331,7 @@
   <div class="max-w-7xl mx-auto">
     <!-- Text and button section -->
     <div class="flex flex-col space-y-6 md:w-1/2">
-    <h1 class="typing-text text-4xl md:text-5xl font-bold">
+    <h1 class=" text-4xl md:text-5xl font-bold typing-text">
   Legal Translation Services
 </h1>
 
@@ -575,5 +603,37 @@
           document.getElementById('body-scripts').outerHTML = window.scripts.body;
         }
       </script>
+       <!-- WhatsApp Floating Button -->
+<a href="https://api.whatsapp.com/send/?phone=%2B916382588355&text&type=phone_number&app_absent=0&wame_ctl=1" target="_blank" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<style>
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 50%;   /* shrink the icon to fit inside the circle */
+    height: 50%;  /* shrink the icon to fit inside the circle */
+}
+</style>
+
    </body>
 </html>
