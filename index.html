@@ -88,8 +88,131 @@
         }
         .fade-in {
           animation: fadeIn 0.5s ease-in-out;
+           .image-container {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  /* Hover effect */
+  .image-container:hover {
+    transform: scale(1.1); /* Pop-up effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .image-container:hover img {
+    transform: scale(1.2);
+  }
+   .grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+  }
+
+  /* Hover effect for the image */
+  .grid img:hover {
+    transform: scale(1.1); /* Pop-up effect */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
         }
       </style>
+       <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ✅ Custom bounce effect on hover */
+    .hover-animate {
+      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s;
+    }
+    .hover-animate:hover {
+      transform: scale(1.12);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    }
+
+    /* ✅ Fade-in animation for grid items */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+    .fade-in:nth-child(5) { animation-delay: 0.5s; }
+    .fade-in:nth-child(6) { animation-delay: 0.6s; }
+  
+    .hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  
+  .hover-shadow {
+  transition: box-shadow 0.4s ease;
+}
+.hover-shadow:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.glow-animation {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(250, 204, 21, 0.3),
+                0 0 20px rgba(250, 204, 21, 0.4);
+    border-color: rgba(250, 204, 21, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.8),
+                0 0 50px rgba(250, 204, 21, 0.9);
+    border-color: rgba(250, 204, 21, 1);
+  }
+}
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #facc15; /* cursor color */
+  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+  width: 0; /* Important to start typing */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+}
+
+
+  </style>
+
 
       <!-- Dynamic Meta Tags -->
       <meta name="description" content="">
@@ -180,7 +303,10 @@
   <div class="max-w-7xl mx-auto">
     <!-- Text and button section -->
     <div class="flex flex-col space-y-6 md:w-1/2">
-      <h1 class="text-4xl md:text-5xl font-bold">Legal Translation Services</h1>
+    <h1 class="typing-text text-4xl md:text-5xl font-bold">
+  Legal Translation Services
+</h1>
+
       <p class="text-lg">Efficient, accurate, and professional translation for all your legal and property documents.</p>
       <ul class="list-disc list-inside space-y-2">
         <li>Expert English-Tamil translations</li>
@@ -194,19 +320,19 @@
 <div class="grid grid-cols-2 gap-10 w-full max-w-screen-xl mx-auto">
   <!-- Image 1 -->
   <div class="aspect-[3/4] overflow-hidden">
-    <img src="images/about1.jpg" alt="Legal document" class="w-full h-full object-cover">
+    <img src="images/about1.jpg" alt="Legal document" class="w-full h-full object-cover hover-lift">
   </div>
   <!-- Image 2 -->
   <div class="aspect-[3/4] overflow-hidden">
-    <img src="images/about2.jpg" alt="Legal document" class="w-full h-full object-cover">
+    <img src="images/about2.jpg" alt="Legal document" class="w-full h-full object-cover hover-lift">
   </div>
   <!-- Image 3 -->
   <div class="aspect-[3/4] overflow-hidden">
-    <img src="images/about3.jpg" alt="Legal document" class="w-full h-full object-cover">
+    <img src="images/about3.jpg" alt="Legal document" class="w-full h-full object-cover hover-lift">
   </div>
   <!-- Image 4 -->
   <div class="aspect-[3/4] overflow-hidden">
-    <img src="images/about4.jpg" alt="Legal document" class="w-full h-full object-cover">
+    <img src="images/about4.jpg" alt="Legal document" class="w-full h-full object-cover hover-lift">
   </div>
 </div>
 
@@ -232,10 +358,10 @@
         <li>Comprehensive legal document services</li>
       </ul>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <img src="https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Team meeting at a wooden table" class="rounded shadow-lg">
-      <img src="https://images.unsplash.com/photo-1563457012475-13cf086fd600?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Wooden table for discussions" class="rounded shadow-lg">
-      <img src="https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Professional discussion in the office" class="rounded shadow-lg">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
+      <img src="https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Team meeting at a wooden table" class="rounded shadow-lg hover-lift">
+      <img src="https://images.unsplash.com/photo-1563457012475-13cf086fd600?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Wooden table for discussions" class="rounded shadow-lg hover-lift">
+      <img src="https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Professional discussion in the office" class="rounded shadow-lg hover-lift">
     </div>
   </div>
 </section>
@@ -243,24 +369,25 @@
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Our Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white text-blue-900 p-6 rounded shadow-lg">
-        <img src="https://images.unsplash.com/photo-1628665843485-547b1449ac8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8bGVnYWwlMjBkb2N1bWVudCUyMHRyYW5zbGF0aW9ufGVufDF8MHx8fDE3NTU0OTg0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Legal document translation in progress" class="w-full h-40 object-cover mb-4 rounded">
+      <div class="bg-white text-blue-900 p-6 rounded shadow-lg hover-animate">
+        <img src="https://images.unsplash.com/photo-1628665843485-547b1449ac8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8bGVnYWwlMjBkb2N1bWVudCUyMHRyYW5zbGF0aW9ufGVufDF8MHx8fDE3NTU0OTg0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Legal document translation in progress" class="w-full h-40 object-cover mb-4 rounded hover-lift ">
         <h3 class="text-xl font-semibold mb-2">Legal Document Translation</h3>
         <p>Accurate translation of legal documents with specialized terminology for English, Tamil, and more.</p>
       </div>
-      <div class="bg-white text-blue-900 p-6 rounded shadow-lg">
-        <img src="https://images.unsplash.com/photo-1642502093512-5b6c81aeef1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8bGVnYWwlMjBkb2N1bWVudCUyMHRyYW5zbGF0aW9ufGVufDF8MHx8fDE3NTU0OTg0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Bible document close-up" class="w-full h-40 object-cover mb-4 rounded">
+      <div class="bg-white text-blue-900 p-6 rounded shadow-lg hover-animate">
+        <img src="https://images.unsplash.com/photo-1642502093512-5b6c81aeef1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8bGVnYWwlMjBkb2N1bWVudCUyMHRyYW5zbGF0aW9ufGVufDF8MHx8fDE3NTU0OTg0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Bible document close-up" class="w-full h-40 object-cover mb-4 rounded hover-lift">
         <h3 class="text-xl font-semibold mb-2">Property Document Processing</h3>
         <p>Create clean and formatted copies of property documents with precision and professionalism.</p>
       </div>
-      <div class="bg-white text-blue-900 p-6 rounded shadow-lg">
-        <img src="https://images.unsplash.com/photo-1645290851812-6ac7b95587d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8bGVnYWwlMjBkb2N1bWVudCUyMHRyYW5zbGF0aW9ufGVufDF8MHx8fDE3NTU0OTg0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Document close-up with text" class="w-full h-40 object-cover mb-4 rounded">
+      <div class="bg-white text-blue-900 p-6 rounded shadow-lg hover-animate">
+        <img src="https://images.unsplash.com/photo-1645290851812-6ac7b95587d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8bGVnYWwlMjBkb2N1bWVudCUyMHRyYW5zbGF0aW9ufGVufDF8MHx8fDE3NTU0OTg0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Document close-up with text" class="w-full h-40 object-cover mb-4 rounded hover-lift ">
         <h3 class="text-xl font-semibold mb-2">DTP and Formatting</h3>
         <p>Professional document typing and formatting services tailored for legal and official needs.</p>
       </div>
     </div>
   </div>
 </section>
+
 <section id="gallery" class="bg-yellow-400 text-blue-900 py-12 px-6">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Gallery</h2>
@@ -268,15 +395,16 @@
       
       <!-- First Row -->
       <div class="rounded overflow-hidden shadow-lg">
-        <img src="images/gal1.jpg"  class="w-full h-48 object-cover">
+        <img src="images/gal1.jpg"  class="w-full h-48 object-cover hover-animate">
       </div>
       <div class="rounded overflow-hidden shadow-lg">
-        <img src="images/gal2.jpg" class="w-full h-48 object-cover">
+        <img src="images/gal2.jpg" class="w-full h-48 object-cover hover-animate">
       </div>
       <div class="rounded overflow-hidden shadow-lg">
-        <img src="images/gal3.jpg" class="w-full h-48 object-cover">
+        <img src="images/gal3.jpg" class="w-full h-48 object-cover hover-animate">
       </div>
       </div>
+   
       <br>
     <!-- Top reels -->
 <div class="w-full flex flex-col sm:flex-row justify-between items-start  p-2 gap-2">
@@ -319,10 +447,10 @@
 <section id="contact" class="bg-blue-900 text-white py-12 px-6">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Contact Us</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
       
       <!-- Contact Info with Outline -->
-      <div class="space-y-4 border border-white rounded-lg p-6 shadow-lg">
+      <div class="space-y-4 border border-white rounded-lg p-6 shadow-lg ">
         <p class="text-lg mb-4">Reach out to us for all your legal translation needs. Our expert team is here to assist you.</p>
         <br>
         
@@ -381,10 +509,10 @@
     </div>
 
     <!-- Office Images -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-      <img src="https://images.unsplash.com/photo-1633155561838-9b372f906787?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8bW9kZXJuJTIwbGVnYWwlMjBvZmZpY2UlMjByZWNlcHRpb258ZW58MXwwfHx8MTc1NTQ5ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Office chairs in a modern room" class="rounded shadow-lg w-full h-48 object-cover">
-      <img src="https://images.unsplash.com/photo-1733819884279-11532101f2ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8bW9kZXJuJTIwbGVnYWwlMjBvZmZpY2UlMjByZWNlcHRpb258ZW58MXwwfHx8MTc1NTQ5ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Potted plant in an office" class="rounded shadow-lg w-full h-48 object-cover">
-      <img src="https://images.unsplash.com/photo-1692133226337-55e513450a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8bW9kZXJuJTIwbGVnYWwlMjBvZmZpY2UlMjByZWNlcHRpb258ZW58MXwwfHx8MTc1NTQ5ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Desk and bookshelf in an office" class="rounded shadow-lg w-full h-48 object-cover">
+    <div class=" grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+      <img src="https://images.unsplash.com/photo-1633155561838-9b372f906787?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8bW9kZXJuJTIwbGVnYWwlMjBvZmZpY2UlMjByZWNlcHRpb258ZW58MXwwfHx8MTc1NTQ5ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Office chairs in a modern room" class="rounded shadow-lg w-full h-48 object-cover hover-animate ">
+      <img src="https://images.unsplash.com/photo-1733819884279-11532101f2ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8bW9kZXJuJTIwbGVnYWwlMjBvZmZpY2UlMjByZWNlcHRpb258ZW58MXwwfHx8MTc1NTQ5ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Potted plant in an office" class="rounded shadow-lg w-full h-48 object-cover hover-animate">
+      <img src="https://images.unsplash.com/photo-1692133226337-55e513450a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8bW9kZXJuJTIwbGVnYWwlMjBvZmZpY2UlMjByZWNlcHRpb258ZW58MXwwfHx8MTc1NTQ5ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Desk and bookshelf in an office" class="rounded shadow-lg w-full h-48 object-cover hover-animate">
     </div>
   </div>
 </section>
