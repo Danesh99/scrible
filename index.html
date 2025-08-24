@@ -190,47 +190,7 @@
     border-color: rgba(250, 204, 21, 1);
   }
 }
-.typing-text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #facc15; /* cursor color */
-  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
-  width: 0; /* Important to start typing */
-}
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-   body {
-      margin: 0;
-      padding: 0;
-      min-height: 200vh; /* Just to show scrolling effect */
-      font-family: Arial, sans-serif;
-    }
-
-    /* Floating WhatsApp Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px; /* distance from bottom */
-      right: 20px;  /* distance from right */
-      width: 60px;
-      height: 60px;
-      background-color: #25D366;
-      border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: transform 0.3s;
-    }
 
     
    
@@ -331,10 +291,31 @@
   <div class="max-w-7xl mx-auto">
     <!-- Text and button section -->
     <div class="flex flex-col space-y-6 md:w-1/2">
-    <h1 class=" text-4xl md:text-5xl font-bold typing-text">
+    <h1 class=" typing-text text-4xl md:text-5xl font-bold ">
   Legal Translation Services
 </h1>
 
+
+<style>
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #facc15; /* cursor */
+  animation: typing 3s steps(27, end) , blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: #facc15; }
+  25%, 75% { border-color: transparent; }
+}
+</style>
       <p class="text-lg">Efficient, accurate, and professional translation for all your legal and property documents.</p>
       <ul class="list-disc list-inside space-y-2">
         <li>Expert English-Tamil translations</li>
@@ -371,8 +352,9 @@
   </div>
 </section>
 
-<section id="about" class="bg-yellow-400 text-blue-900 py-12 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<section id="about" class="bg-yellow-400 text-blue-900 py-12 px-6 ">
+  
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
     <div>
       <h2 class="text-3xl font-bold mb-4">About Micro Computers</h2>
       <p class="text-lg mb-6">
@@ -386,12 +368,14 @@
         <li>Comprehensive legal document services</li>
       </ul>
     </div>
+ 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
       <img src="https://images.unsplash.com/photo-1565688527174-775059ac429c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Team meeting at a wooden table" class="rounded shadow-lg hover-lift">
       <img src="https://images.unsplash.com/photo-1563457012475-13cf086fd600?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Wooden table for discussions" class="rounded shadow-lg hover-lift">
       <img src="https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8Y29ycG9yYXRlJTIwdHJhbnNsYXRpb24lMjB0ZWFtJTIwbWVldGluZ3xlbnwxfDB8fHwxNzU1NDk4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Professional discussion in the office" class="rounded shadow-lg hover-lift">
     </div>
   </div>
+  
 </section>
 <section id="services" class="bg-blue-900 text-white py-12 px-6">
   <div class="max-w-7xl mx-auto">
@@ -478,7 +462,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
       
       <!-- Contact Info with Outline -->
-      <div class="space-y-4 border border-white rounded-lg p-6 shadow-lg ">
+      <div class="space-y-4  rounded-lg p-6 shadow-lg hover-lift">
         <p class="text-lg mb-4">Reach out to us for all your legal translation needs. Our expert team is here to assist you.</p>
         <br>
         
@@ -517,7 +501,7 @@
          
       
       <!-- Contact Form -->
-      <div class="space-y-4">
+      <div class="space-y-4 hover-lift">
         <form action="#" method="POST" class="space-y-4">
           <div>
             <label for="name" class="block text-sm font-medium">Your Name</label>
