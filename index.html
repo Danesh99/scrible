@@ -127,6 +127,7 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
   }
         }
+
       </style>
        <!-- ✅ Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -195,8 +196,36 @@
     
    
 }
+html {
+  scroll-behavior: smooth;
+}
 
+.session-text {
+      font-size: 3rem;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
 
+    @keyframes fadeSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  /* active class will trigger animation */
+    .session-text.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+     .typing {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid orange;
+    opacity: 1;
+  }
   </style>
 
 
@@ -309,14 +338,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <section class="bg-blue-900 text-white py-12 px-6">
   <div class="max-w-7xl mx-auto">
     <!-- Text and button section -->
-    <div class="flex flex-col space-y-6 md:w-1/2">
-    <h1 class=" text-4xl md:text-5xl font-bold ">
+    <div class="flex flex-col space-y-6 md:w-1/2 ">
+    <h1 class=" text-4xl md:text-5xl font-bold session-text">
   Legal Translation Services
 </h1>
 
 
 
-      <p class="text-lg">Efficient, accurate, and professional translation for all your legal and property documents.</p>
+      <p class="text-lg fadeInUp typewriter">Efficient, accurate, and professional translation for all your legal and property documents.</p>
       <ul class="list-disc list-inside space-y-2">
         <li>Expert English-Tamil translations</li>
         <li>Legal document formatting and DTP</li>
@@ -356,13 +385,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in-text">
     <div>
-      <h2 class="text-3xl font-bold mb-4">About Micro Computers</h2>
-      <p class="text-lg mb-6">
+      <h2 class="text-3xl font-bold mb-4 session-text">About Micro Computers</h2>
+      <p class="text-lg mb-6  ">
         <strong>MICRO COMPUTERS</strong>, known for accurate and reliable translation, was started by Mr.V.Padmanaban, B.Com., in the year 1993. The Company does Legal Translation (Tamil to English) of documents concerning the <strong>HIGH COURT & SUPREME COURT</strong>. 
         We translate legal documents for the <strong>VVIPs and Senior Advocates in Tamil Nadu</strong> practising in the <strong>HIGH COURT & SUPREME COURT</strong>. Legal documents for the seniormost Advocates in the Supreme Court are translated through senior Advocates in Chennai. Besides, we also translate documents pertaining to criminal and civil cases for the litigants and common man as well.  
         
       </p>
-      <ul class="list-disc list-inside space-y-2">
+      <ul class="list-disc list-inside space-y-2 fade-left-text">
         <li>Over 32 years of experience</li>
         <li>Expert team of translators and DTP professionals</li>
         <li>Comprehensive legal document services</li>
@@ -370,16 +399,17 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
  
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
-      <img src="images/about5.jpg" alt="Team meeting at a wooden table" class="rounded shadow-lg hover-lift">
-      <img src="images/about6.jpg" alt="Wooden table for discussions" class="rounded shadow-lg hover-lift">
-      <img src="images/about7.jpg" alt="Professional discussion in the office" class="rounded shadow-lg hover-lift">
+      <img src="images/about5.jpg" alt="Team meeting at a wooden table" class="rounded shadow-lg w-full h-48 object-cover hover-lift">
+      <img src="images/about6.jpg" alt="Wooden table for discussions" class="rounded shadow-lg w-full h-48 object-cover hover-lift">
+      <img src="images/about7.jpg" alt="Professional discussion in the office" class="rounded shadow-lg w-full h-48 object-cover hover-lift">
     </div>
   </div>
   
+
 </section>
 <section id="services" class="bg-blue-900 text-white py-12 px-6">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-center">Our Services</h2>
+    <h2 class="text-3xl font-bold mb-6 text-center session-text">Our Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-white text-blue-900 p-6 rounded shadow-lg hover-animate">
         <img src="https://images.unsplash.com/photo-1628665843485-547b1449ac8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8bGVnYWwlMjBkb2N1bWVudCUyMHRyYW5zbGF0aW9ufGVufDF8MHx8fDE3NTU0OTg0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Legal document translation in progress" class="w-full h-40 object-cover mb-4 rounded hover-lift ">
@@ -402,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <section id="gallery" class="bg-yellow-400 text-blue-900 py-12 px-6">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-center">Gallery</h2>
+    <h2 class="text-3xl font-bold mb-6 text-center session-text ">Gallery</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       
       <!-- First Row -->
@@ -467,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <section id="contact" class="bg-blue-900 text-white py-12 px-6">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-center">Contact Us</h2>
+    <h2 class="text-3xl font-bold mb-6 text-center session-text ">Contact Us</h2>
 
     <!-- GRID WRAPPER -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -669,7 +699,22 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 </style>
 
+  <script>
+    // Observe when .session-text enters viewport
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active'); // remove if you want it to re-animate on revisit
+        }
+      });
+    }, { threshold: 0.5 });
 
+    document.querySelectorAll('.session-text').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 
 
    </body>
