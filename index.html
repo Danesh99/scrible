@@ -345,8 +345,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-      <p class="text-lg fadeInUp typewriter">Efficient, accurate, and professional translation for all your legal and property documents.</p>
-      <ul class="list-disc list-inside space-y-2">
+      <p class="text-lg fadeInUp typewriter fade-left-text">Efficient, accurate, and professional translation for all your legal and property documents.</p>
+      <ul class="list-disc list-inside space-y-2 fade-left-text">
         <li>Expert English-Tamil translations</li>
         <li>Legal document formatting and DTP</li>
         <li>All languages translation services</li>
@@ -385,13 +385,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in-text">
     <div>
-      <h2 class="text-3xl font-bold mb-4 session-text">About Micro Computers</h2>
-      <p class="text-lg mb-6  ">
+      <h2 class="text-3xl font-bold mb-4  fade-left-text">About Micro Computers</h2>
+      <p class="text-lg mb-6  fade-left-text ">
         <strong>MICRO COMPUTERS</strong>, known for accurate and reliable translation, was started by Mr.V.Padmanaban, B.Com., in the year 1993. The Company does Legal Translation (Tamil to English) of documents concerning the <strong>HIGH COURT & SUPREME COURT</strong>. 
         We translate legal documents for the <strong>VVIPs and Senior Advocates in Tamil Nadu</strong> practising in the <strong>HIGH COURT & SUPREME COURT</strong>. Legal documents for the seniormost Advocates in the Supreme Court are translated through senior Advocates in Chennai. Besides, we also translate documents pertaining to criminal and civil cases for the litigants and common man as well.  
         
       </p>
-      <ul class="list-disc list-inside space-y-2 fade-left-text">
+      <ul class="list-disc list-inside space-y-2 fade-left-text ">
         <li>Over 32 years of experience</li>
         <li>Expert team of translators and DTP professionals</li>
         <li>Comprehensive legal document services</li>
@@ -404,7 +404,40 @@ document.addEventListener('DOMContentLoaded', function() {
       <img src="images/about7.jpg" alt="Professional discussion in the office" class="rounded shadow-lg w-full h-48 object-cover hover-lift">
     </div>
   </div>
-  
+  <style>
+.fade-left-text {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-left-text.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+</style>
+
+<script>document.addEventListener("DOMContentLoaded", () => {
+  const faders = document.querySelectorAll(".fade-left-text");
+
+  const options = {
+    threshold: 0.2, // 20% of element visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        // Optional: remove class to animate again on scroll out/in
+        entry.target.classList.remove("show");
+      }
+    });
+  }, options);
+
+  faders.forEach(fader => observer.observe(fader));
+});
+</script>
 
 </section>
 <section id="services" class="bg-blue-900 text-white py-12 px-6">
@@ -495,16 +528,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
 </section>
 
-<section id="contact" class="bg-blue-900 text-white py-12 px-6">
+<section id="contact" class="bg-blue-900 text-white py-12 px-6 ">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center session-text ">Contact Us</h2>
 
     <!-- GRID WRAPPER -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
 
       <!-- Contact Info -->
       <div class="bg-blue-900 transition-all duration-300 transform hover:-translate-y-1">
-        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+        <h3 class="text-2xl font-semibold mb-6 ">Contact Information</h3>
 
         <!-- Phone -->
         <div class="flex items-center space-x-4 mb-6 group">
